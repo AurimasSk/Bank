@@ -10,7 +10,7 @@ import lt.aurimas.repository.StudentRepository;
 @Service("studentService")
 public class StudentServiceImpl implements StudentService {
 
-
+	@Autowired
 	private StudentRepository studentRepository;
 	
 	@Transactional

@@ -19,6 +19,7 @@ import lt.aurimas.service.StudentService;
 @SessionAttributes("student")
 public class StudentController {
 	
+	@Autowired
 	private StudentService studentService;
 		
 	@RequestMapping(value="/signup", method=RequestMethod.GET)

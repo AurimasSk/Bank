@@ -1,9 +1,11 @@
 package lt.aurimas.repository;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import lt.aurimas.model.Student;
 
+@Repository("studentRepository")
 @Transactional
 public class StudentRepositoryImpl implements StudentRepository {
 
