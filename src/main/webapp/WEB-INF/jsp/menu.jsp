@@ -3,18 +3,15 @@
 <html>
 	<head>
 	   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	   <title>Pagrindinis</title>
+	   <title>Menu</title>
 	</head>
 	
 	<body>
 		
-		<div id="header">
-			<jsp:include page="WEB-INF/jsp/header.jsp"/>
-		</div>
-		
-		<div id="footer">
-			<jsp:include page="WEB-INF/jsp/footer.jsp"/>
-		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Pagrindinis</a></li>
+			<li><a href="history.html">Istorija</a></li>
+		</ul>
 		
 	</body>
 </html>

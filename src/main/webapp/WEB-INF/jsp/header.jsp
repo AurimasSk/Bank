@@ -3,17 +3,17 @@
 <html>
 	<head>
 	   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	   <title>Pagrindinis</title>
+	   <title>Headeris</title>
 	</head>
 	
 	<body>
 		
-		<div id="header">
-			<jsp:include page="WEB-INF/jsp/header.jsp"/>
+		<div id="menu">
+			<jsp:include page="menu.jsp"/>
 		</div>
 		
-		<div id="footer">
-			<jsp:include page="WEB-INF/jsp/footer.jsp"/>
+		<div>
+				<h2> LABAS </h2>	
 		</div>
 		
 	</body>

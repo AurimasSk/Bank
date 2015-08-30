@@ -22,11 +22,11 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 		
-	@RequestMapping(value="/signup", method=RequestMethod.GET)
+	@RequestMapping(value="/history", method=RequestMethod.GET)
 	public String signup(Model model) {
 		Student student = new Student();		
 		model.addAttribute("student", student);		
-		return "signup";
+		return "history";
 	}
 	
 	@RequestMapping(value="/signup", method=RequestMethod.POST)
