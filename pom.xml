@@ -25,7 +25,12 @@
  
         <!-- Logging -->
         <logback.version>1.0.13</logback.version>
+        
         <slf4j.version>1.7.5</slf4j.version>
+        
+        <!-- Bootstrap -->
+        <bootstrap.version>3.3.5</bootstrap.version>
+        
 	</properties>
 	
 	<dependencies>
@@ -190,7 +195,14 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>
+		
+		<!-- Bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>${bootstrap.version}</version>
+		</dependency>    
 	</dependencies>
     <build>
         <plugins>
