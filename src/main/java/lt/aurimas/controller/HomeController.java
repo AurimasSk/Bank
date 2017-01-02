@@ -2,6 +2,7 @@ package lt.aurimas.controller;
 
 import javax.validation.Valid;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,52 +17,25 @@ import lt.aurimas.model.StudentLogin;
 import lt.aurimas.service.StudentService;
 
 @Controller
-@SessionAttributes("student")
-public class StudentController {
+public class HomeController {
 	
-	@Autowired
-	private StudentService studentService;
+	private static final Logger log = Logger.getLogger(HomeController.class);
 		
-	@RequestMapping(value="/history", method=RequestMethod.GET)
-	public String signup(Model model) {
-		Student student = new Student();		
-		model.addAttribute("student", student);		
-		return "history";
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	public String home(Model model) {
+		log.info("Here");
+		return "homePage";
 	}
 	
-	@RequestMapping(value="/signup", method=RequestMethod.POST)
+	@RequestMapping(value="/", method=RequestMethod.POST)
 	public String signup(@Valid @ModelAttribute("student") Student student, BindingResult result, Model model) {		
-		if(result.hasErrors()) {
-			return "signup";
-		} else if(studentService.findByUserName(student.getUserName())) {
-			model.addAttribute("message", "User Name exists. Try another user name");
-			return "signup";
-		} else {
-			studentService.save(student);
-			model.addAttribute("message", "Saved student details");
-			return "redirect:login.html";
-		}
+		return "index";
 	}
 
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String login(Model model) {			
 		StudentLogin studentLogin = new StudentLogin();		
 		model.addAttribute("studentLogin", studentLogin);
-		return "login";
-	}
-	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login(@Valid @ModelAttribute("studentLogin") StudentLogin studentLogin, BindingResult result) {
-		if (result.hasErrors()) {
-			return "login";
-		} else {
-			boolean found = studentService.findByLogin(studentLogin.getUserName(), studentLogin.getPassword());
-			if (found) {				
-				return "success";
-			} else {				
-				return "failure";
-			}
-		}
-		
+		return "template";
 	}
 }
